@@ -28,6 +28,7 @@ public abstract class Node {
         return weight;
     }
 
+
     public void setWeight(int weight) {
         this.weight = weight;
     }

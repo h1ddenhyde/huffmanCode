@@ -30,6 +30,7 @@ public class InnerNode extends Node {
             return lNode.codeString(word);
     }
 
+
     public Node getlNode() {
         return lNode;
     }

@@ -15,13 +15,14 @@ public class CodingCommand implements Command {
     HashMap<String, String> codes;
     StringBuilder word;
     PriorityQueue<Node> queue;
+    String string;
 
     @Override
     public void execute() {
         init();
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.next();
-        countNumbers(s);
+        string = scanner.next();
+        countNumbers(string);
 
         while (queue.size() > 1) {
             Node n1 = queue.poll();
@@ -31,7 +32,7 @@ public class CodingCommand implements Command {
 
         codes = queue.peek().buildCode();
 
-        for (char ch : s.toCharArray())
+        for (char ch : string.toCharArray())
             word.append(queue.peek().codeString(ch));
 
     }
@@ -68,5 +69,6 @@ public class CodingCommand implements Command {
         word = new StringBuilder();
         letterInfo = new HashMap<>();
         queue = new PriorityQueue(33, Node.inputComparator);
+        string = "";
     }
 }

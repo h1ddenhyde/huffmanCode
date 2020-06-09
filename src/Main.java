@@ -1,10 +1,11 @@
 import services.CodingCommand;
+import services.ResultDescriptor;
 
 class Main {
     public static void main(String[] args) {
         CodingCommand codingCommand = new CodingCommand();
         codingCommand.execute();
-        codingCommand.printResult();
+        new ResultDescriptor(codingCommand).describeResults();
     }
 }
 
